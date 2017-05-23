@@ -1,5 +1,5 @@
 # Data Structure
-![@kuroega](https://github.com/kuroega)
+@kuroega
 Java Data Structure
 ## The Stranger whom you are familiar with
 
@@ -35,10 +35,18 @@ What is the **Time Complexity** of ArrayList element appending?
 
 ```
 Amortized O(1)
-						 |
-						 |
-						 |
-				 |		 |
-     			 |		 |
+                         |
+                         |
+                         |
+                 |       |
+                 |       |
 O(1) _____|______|_______|
 ```
+
+- Resizable Array
+- Access: O(1)
+- AddFirst: O(n)
+- AddLast: O(1) Amortized
+- RemoveFirst: O(n) (no holes: continuous mem address location)
+- RemoveLast: O(1)
+- Set: O(1)
