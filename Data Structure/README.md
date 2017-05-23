@@ -69,46 +69,50 @@ a.removeFirst();
 a.addLast(17);
 ```
 Recursive Sequence Queue
-
+```
 head/tail
 [       ][][][][][][][][][][][][][][][]
 head tail
 [ 1 ][  ][][][][][][][][][][][][][][]
-
+```
 element[tail] = 1
 tail = tail + 1 (**tail** is always the one being added a new element)
-
+```
 Removed head                                              tail
 [     ][  2 ][3][4][5][6][7][8][9][10][11][12][13][14][15][  ]
-
+```
 **Add more?**
 
 tail = (tail + 1) % length
+```
 tail head
 [  ][ 2 ][3][4][5][6][7][8][9][10][11][12][13][14][15][16]
-
+```
 **Add One More?**
+```
    head/tail
 [][    2   ][3][4][5][6][7][8][9][10][11][12][13][14][15][16]
-
+```
 **Then...Add One More!**
 Resize: 2x
 
 **Why 2x Resizing?**
 
-
+```
      head/tail
 [17][   2     ][3][4][5][6][7][8][9][10][11][12][13][14][15][16]
  head              👇 copy                              tail
 [ 2  ][3][4][5][6][7][8][9][10][11][12][13][14][15][16][ 17 ][][][][][][][][][][][][][][][][]
 
+```
 **At Last...**
 ```a.addFirst(1)```
 
 head = (head - 1 + length) % length = 31
+```
                                                      tail                               head
 [2][3][4][5][6][7][8][9][10][11][12][13][14][15][16][ 17 ][][][][][][][][][][][][][][][][ 1 ]
-
+```
 ### Porperties
 
 - Resizable circular queue
