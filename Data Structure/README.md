@@ -96,7 +96,7 @@ tail head
 **Then...Add One More!**
 Resize: 2x
 
-**Why 2x Resizing?**
+**Why 2x Resizing? (Hint: Bitwise Operation)**
 
 ```
      head/tail
@@ -127,10 +127,32 @@ head = (head - 1 + length) % length = 31
 - AddLast: AL/AD √
 - RemoveFirst: AD √
 - RemoveLast: AD/AL √
+```
+addFirst()       head = (head - 1 + length) % length
+addLast()        tail = (tail + 1) % length --> tail = (tail - 1) & (elements.length - 1)
+removeFirst()    head = (head - 1) % length --> head = (head -1) & (elements.length - 1)
+removeLast()     head = (tail - 1 + length) % length
+double capacity  head == tail
+```
+*BitWise AND is much Faster than division, also Simpler, Overflow Avoidance*
 
+- ## String in Java
 
+Q:
+```java 
+- String str = new String(); initialize N new instances each time call it
+- String str = ""; √ better approach: create one copy of the empty string
+```
+In Java, String is a Final Char Array generally. It is immutable b/c "Final"
 
+### String pool
 
+Same String Content only have one copy in mem space.
+```java
+String a = "ff" 
+String a1 = "ff"
+```
+They are the same.
 
-
+- ##  
 
